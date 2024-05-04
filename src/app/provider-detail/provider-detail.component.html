@@ -1,0 +1,37 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text" *ngIf="provider">
+          <p>Read the Details</p>
+          <h1>{{ provider.username }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- single article section -->
+<div class="mt-150 mb-150" *ngIf="provider">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="single-article-section">
+          <div class="single-article-text">
+            <div><img [src]="provider.image" alt=""></div>
+            <p class="blog-meta">
+              <span class="author"
+                ><i class="fas fa-user"></i> {{ provider.email }}</span
+              >
+              <span class="date"
+                ><i class="fas fa-calendar"></i
+                >{{ provider.availability }}</span
+              >
+            </p>
+            <h2>{{ provider.username }}</h2>
+            <p>{{ provider.services_offered }}</p>
+          </div><br>
+<br>
+<!-- <app-comment-section></app-comment-section> -->

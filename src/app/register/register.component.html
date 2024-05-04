@@ -1,0 +1,154 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p>Get 24/7 Support</p>
+          <h1>Welcome</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- register form -->
+
+<div class="contact-from-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <!-- Image column -->
+      <div style="display: flex; margin: 1rem auto">
+        <div>
+          <img
+            src="assets\img\services\register-img.png"
+            alt="banner"
+          />
+        </div>
+        <div>
+          <div class="col-lg-8 mb-5 mb-lg-0">
+            <div class="form-title">
+              <h2>Sign Up</h2>
+            </div>
+            <div id="form_status"></div>
+            <div class="contact-form">
+              <form
+                type="POST"
+                id="fruitkha-contact"
+                *ngIf="!isSuccessful"
+                name="form"
+                (ngSubmit)="f.form.valid && onSubmit()"
+                #f="ngForm"
+                novalidate
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <input
+                    type="email"
+                    placeholder="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="email"
+                    [(ngModel)]="form.email"
+                    required
+                    email
+                    #email="ngModel"
+                  />
+                  <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                    <div *ngIf="email.errors['required']">
+                      Email is required
+                    </div>
+                    <div *ngIf="email.errors['email']">
+                      Email must be a valid email address
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    placeholder="password"
+                    name="password"
+                    [(ngModel)]="form.password"
+                    required
+                    minlength="4"
+                    #password="ngModel"
+                  />
+                  <div
+                    class="alert-danger"
+                    *ngIf="password.errors && f.submitted"
+                  >
+                    <div *ngIf="password.errors['required']">
+                      Password is required
+                    </div>
+                    <div *ngIf="password.errors['minlength']">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="name"
+                    [(ngModel)]="form.username"
+                    required
+                    minlength="3"
+                    maxlength="20"
+                    #username="ngModel"
+                  />
+                  <div
+                    class="alert-danger"
+                    *ngIf="username.errors && f.submitted"
+                  >
+                    <div *ngIf="username.errors['required']">
+                      Username is required
+                    </div>
+                    <div *ngIf="username.errors['minlength']">
+                      Username must be at least 3 characters
+                    </div>
+                    <div *ngIf="username.errors['maxlength']">
+                      Username must be at most 20 characters
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="address"
+                    placeholder="address"
+                    [(ngModel)]="form.address"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="phone"
+                    [(ngModel)]="form.phone"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="file"
+                    #fileInput
+                    name="profile_image"
+                    [(ngModel)]="form.profile_image"
+                  />
+                </div>
+
+                <input type="hidden" name="token" value="FsWga4&@f6aw" />
+                <p><input type="submit" value="Submit" /></p>
+                
+              </form>
+              <p>Already have an account? <a routerLink="/login" routerLinkActive="active">login</a></p>
+                    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
