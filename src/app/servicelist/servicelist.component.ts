@@ -1,3 +1,5 @@
+// servicelist.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../services/service-service/service.service';
 import { Service } from '../models/service';
@@ -5,15 +7,16 @@ import { Service } from '../models/service';
 @Component({
   selector: 'app-servicelist',
   templateUrl: './servicelist.component.html',
-  styleUrls: ['./servicelist.component.css']
+  styleUrls: ['./servicelist.component.css'],
 })
 export class ServicelistComponent implements OnInit {
   services: Service[] = [];
+  filteredServices: Service[] = [];
+  searchQuery: string = '';
   p: number = 1;
   itemsPerPage: number = 3;
-  paginationId: string = 'servicePagination'; // Unique ID for pagination instance
 
-  constructor(private serviceService: ServiceService) { }
+  constructor(private serviceService: ServiceService) {}
 
   ngOnInit(): void {
     this.loadServices();
@@ -22,25 +25,33 @@ export class ServicelistComponent implements OnInit {
   loadServices(): void {
     this.serviceService.getAllServices().subscribe(
       (response: any) => {
-        console.log('Services retrieved:', response.services);
-        this.services = Object.values(response.services); // Convert object to array
+        this.services = Object.values(response.services);
+        this.filteredServices = [...this.services];
       },
       (error) => {
-        console.log('Error fetching services:', error);
+        console.error('Error fetching services:', error);
       }
     );
+  }
+
+  searchServices(): void {
+    this.filteredServices = this.services.filter((service) =>
+      service.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      service.category.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  }
+
+  onSubmitSearch(): void {
+    this.searchServices();
   }
 
   onPageChange(event: number): void {
     if (event >= 1 && event <= this.getTotalPages()) {
       this.p = event;
     }
-    // You can also call loadServices() here if needed for new page data
   }
 
   getTotalPages(): number {
     return Math.ceil(this.services.length / this.itemsPerPage);
   }
 }
-
-
