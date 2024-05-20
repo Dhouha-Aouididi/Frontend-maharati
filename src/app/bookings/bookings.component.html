@@ -1,0 +1,89 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-center">
+              <div class="breadcrumb-text">
+                  <p>Consulter vos</p>
+                  <h1>Réservations</h1>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+<div *ngIf="bookings.length > 0" class="cart-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="cart-table-wrap">
+          <table class="cart-table">
+            <thead class="cart-table-head">
+              <tr class="table-head-row">
+                <th class="product-remove"></th>
+                <th class="product-image">Home service</th>
+                <th class="product-name">Nom</th>
+                <th class="product-price">Prix</th>
+                <th class="product-quantity">Date & Heure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let booking of bookings" class="table-body-row">
+                <td class="product-remove">
+                  <a *ngIf="booking.id" (click)="deleteBooking(booking.id)"><i class="far fa-window-close"></i></a><br>
+                  <a (click)="openUpdateBookingModal(booking)"><i class="fas fa-edit"></i></a>
+                </td>
+                <td class="product-image"><img [src]="booking.Service.image" alt="Service Image" class="booking-image"></td>
+                <td class="product-name">{{ booking.Service.title }}</td>
+                <td class="product-price">{{ booking.Service.price| number:'1.0-0' }} dt</td>
+                <td class="product-quantity">{{ formatDateTime(booking.date, 'dd/MM/y') }} {{ booking.time }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="total-section">
+          <table class="total-table">
+            <thead class="total-table-head">
+              <tr class="table-total-row">
+                <th>Total</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total-data">
+                <td><strong>Subtotal: </strong></td>
+                <td>$ subtotal </td>
+              </tr>
+              <tr class="total-data">
+                <td><strong>Shipping: </strong></td>
+                <td>$ shipping </td>
+              </tr>
+              <tr class="total-data">
+                <td><strong>Total: </strong></td>
+                <td>$total</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cart-buttons">
+            <a href="#" class="boxed-btn">Update Cart</a>
+            <a href="#" class="boxed-btn black">Check Out</a>
+          </div>
+        </div>
+        <div class="coupon-section">
+          <h3>Apply Coupon</h3>
+          <div class="coupon-form-wrap">
+            <form action="index.html">
+              <p><input type="text" placeholder="Coupon"></p>
+              <p><input type="submit" value="Apply"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="bookings.length === 0" class="no-bookings mt-150 mb-150">
+  <p>No bookings found.</p>
+</div>

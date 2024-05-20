@@ -153,9 +153,32 @@
         //     $(".search-area").addClass("search-active");
         // });
 
-        $(".close-btn").on("click", function() {
-            $(".search-area").removeClass("search-active");
-        });
+        // $(".close-btn").on("click", function() {
+        //     $(".search-area").removeClass("search-active");
+        // });
+        // When the search icon is clicked
+$(".search-bar-icon").on("click", function(){
+    $(".search-area").addClass("search-active");
+});
+
+// When the close button is clicked
+$(".close-btn").on("click", function() {
+    $(".search-area").removeClass("search-active");
+});
+
+// Optionally, you can add this to prevent the automatic fade-out
+$(".search-area").on("click", function(event) {
+    // Prevent event propagation to avoid automatic fade-out when clicking inside the search area
+    event.stopPropagation();
+});
+
+// This will handle clicks outside the search area to close it
+$(document).on("click", function(event) {
+    if (!$(event.target).closest(".search-area").length) {
+        $(".search-area").removeClass("search-active");
+    }
+});
+
         
     
     });

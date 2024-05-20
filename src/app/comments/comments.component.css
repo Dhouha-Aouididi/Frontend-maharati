@@ -1,0 +1,13 @@
+.fa-star {
+    color: #ccc; /* Light gray for unselected stars */
+  }
+  
+  .fa-star-checked {
+    color: #f1c40f; /* Gold for selected stars */
+  }
+  
+  .comment-rating i {
+    font-size: 20px; /* Adjust font size as desired */
+  }
+  
+  

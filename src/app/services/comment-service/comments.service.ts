@@ -23,4 +23,10 @@ export class CommentsService {
   getCommentsForService(serviceId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(`${this.baseUrl}/service/${serviceId}`);
   }
+
+
+   // Fonction pour supprimer un commentaire par ID
+   deleteComment(commentId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${commentId}`);
+  }
 }

@@ -9,7 +9,6 @@ import { FooterComponent } from 'src/shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { BookComponent } from './book/book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
@@ -19,12 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from 'src/shared/header/header.component';
 import { StickyHeaderDirective } from './directive/sticky-header.directive';
 import { ToastrModule } from 'ngx-toastr';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServicelistComponent } from './servicelist/servicelist.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ProviderlistComponent } from './providerlist/providerlist.component';
 import { ProviderDetailComponent } from './provider-detail/provider-detail.component';
-import { StarRatingModule } from 'angular-star-rating';
 import { CommentsComponent } from './comments/comments.component';
+import { BookingModalComponent } from './booking-modal/booking-modal.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { BookingModalUpdateComponent } from './booking-modal-update/booking-modal-update.component';
 
 
 
@@ -38,7 +40,6 @@ import { CommentsComponent } from './comments/comments.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    BookComponent,
     RegisterComponent,
     LoginComponent,
     HeaderComponent,
@@ -48,6 +49,10 @@ import { CommentsComponent } from './comments/comments.component';
     ProviderlistComponent,
     ProviderDetailComponent,
     CommentsComponent,
+    BookingModalComponent,
+    BookingsComponent,
+    BookingModalUpdateComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,8 +62,8 @@ import { CommentsComponent } from './comments/comments.component';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    StarRatingModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule
 
 
   ],

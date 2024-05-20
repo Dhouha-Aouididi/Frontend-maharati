@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>From your MAHARATI family</p>
-                    <h1>Welcome Again</h1>
+                    <p>Chez votre Famille MAHARATI </p>
+                    <h1>Bienvenue</h1>
                 </div>
             </div>
         </div>
@@ -16,140 +16,67 @@
 <!-- contact form -->
 <div class="contact-from-section mt-150 mb-150">
     <div class="container">
-      <!-- <div class="row"> -->
+      <div class="row"> 
         <!-- Image column -->
-        <!-- <div style="display: flex; margin: 1rem auto">
+        <div style="display: flex; margin: 1rem auto">
           <div>
             <img
-              src="assets\img\services\register-img.png"
+              src="assets/img/services/Happy_place.jpg"
               alt="banner"
             />
-          </div> -->
-          <!-- <div> -->
-            <!-- <div class="col-lg-8 mb-5 mb-lg-0">
-                <div class="form-title">
-                    <h2>SignIn</h2>
-                </div>
-                <div id="form_status"></div>
-                <div class="contact-form">
-                    <form type="POST" id="fruitkha-contact" *ngIf="!isLoggedIn"
-                    name="form"
-                    (ngSubmit)="f.form.valid && onSubmit()"
-                    #f="ngForm"
-                    novalidate enctype="multipart/form-data">
-                    
-                            <input  type="text"
-                            name="username"
-                            placeholder="name"
-                            [(ngModel)]="form.username"
-                            required
-                            
-                            #username="ngModel">
-                    
-                        <div
-                        class="alert alert-danger"
-                        role="alert"
-                        *ngIf="username.errors && f.submitted">
-                        Username is required!
-                      </div><br/><br/>
-                    
-                            <input type="password"
-                            placeholder="password"
-                            name="password"
-                            [(ngModel)]="form.password"
-                            required
-                            minlength="4"
-                            #password="ngModel">
-                        
-                        <div
-          class="alert alert-danger"
-          role="alert"
-          *ngIf="password.errors && f.submitted"
-        >
-          <div *ngIf="password.errors['required']">Password is required</div>
-          <div *ngIf="password.errors['minlength']">
-            Password must be at least 4 characters
           </div>
-        </div>                    
-                        <input type="hidden" name="token" value="FsWga4&@f6aw">
-                        <p><input type="submit" value="Submit"></p><br/><br/>
-                    
-                        <div class="form-group">
-                            <div
-                              class="alert alert-danger"
-                              role="alert"
-                              *ngIf="f.submitted && isLoginFailed"
-                            >
-                              Login failed: {{ errorMessage }}
-                            </div>
-                          </div>
-                        <p>No account? <a routerLink="/register" routerLinkActive="active">Register here</a></p>
-                    </form>
-                        <div class="alert alert-success" *ngIf="isLoggedIn">
-                            Logged in as {{ roles }}.
-                        </div>
-                </div>
-            </div> -->
             <div class="col-lg-8 mb-5 mb-lg-0 comment-template">
               <h4>SignIn</h4>
             
-              <p>If you have an account, please sign in to continue.</p>
+              <p>Vous avez un compte, SVP sign in to continuer.</p>
             
               <form type="POST" id="fruitkha-contact" *ngIf="!isLoggedIn"
                     name="form"
                     (ngSubmit)="f.form.valid && onSubmit()"
                     #f="ngForm"
                     novalidate enctype="multipart/form-data">
-            
-                <p>
                   <input type="text"
                          name="username"
-                         placeholder="Username"
+                         placeholder="Nom"
                          [(ngModel)]="form.username"
                          required
-                         #username="ngModel">
-                </p>
+                         #username="ngModel"><br>
             
                 <div class="alert alert-danger"
                      role="alert"
                      *ngIf="username.errors && f.submitted">
-                  Username is required!
+                     Nom d'utilisateur est nécessaire!
                 </div>
                 <br/>
-            
-                <p>
+
                   <input type="password"
                          placeholder="Password"
                          name="password"
                          [(ngModel)]="form.password"
                          required
                          minlength="4"
-                         #password="ngModel">
-                </p>
-            
+                         #password="ngModel"><br>
+              
                 <div class="alert alert-danger"
                      role="alert"
                      *ngIf="password.errors && f.submitted">
-                  <div *ngIf="password.errors['required']">Password is required</div>
+                  <div *ngIf="password.errors['required']">Mot de passe est nécessaire!</div>
                   <div *ngIf="password.errors['minlength']">
-                    Password must be at least 4 characters
+                    Mot de passe à 4 caractères au min
                   </div>
-                </div>
-            
+                </div><br>
                 <input type="hidden" name="token" value="FsWga4&@f6aw">
-            
-                <p><input type="submit" value="Submit"></p>
+                <input type="submit" value="Submit">
                 <br/><br/>
             
                 <div class="form-group">
-                  <div class="alert alert-danger"
+                  <p class="alert alert-danger"
                        role="alert"
                        *ngIf="f.submitted && isLoginFailed">
                     Login failed: {{ errorMessage }}
-                  </div>
+                </p>
                 </div>
-            
-                <p>No account? <a routerLink="/register" routerLinkActive="active">Register here</a></p>
+                <p>Pas de compte? <a routerLink="/register" routerLinkActive="active">S'inscrire ici</a></p>
               </form>
             
               <div class="alert alert-success" *ngIf="isLoggedIn">

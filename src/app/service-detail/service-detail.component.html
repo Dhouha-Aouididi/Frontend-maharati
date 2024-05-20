@@ -25,24 +25,21 @@
                 <div class="single-product-content">
                     <h3>{{ service.title }}</h3>
                     <p><strong>Categories: </strong>{{ service.category }}</p>
-                    <p class="single-product-pricing"><span>Price</span> {{ service.price | currency }}</p>
+                    <p class="single-product-pricing"><span>Prix</span>{{ service.price | number:'1.0-0' }}dt</p>
                     <p>{{ service.description }}</p>
                     <!-- Star Rating Icon -->
                     <div class="single-product-rating">
                         <!-- <h4>Rating:</h4> -->
                         <div>
-                          
-
-                    <!-- End Star Rating Icon -->
-
-                    <!-- <div class="single-product-form">
-                        <form action="/">
-                            <input type="number" placeholder="0">
-                        </form>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                        <p><strong>Categories: </strong>{{ service.category }}</p>
-                    </div> -->
+                            <a class="cart-btn" (click)="openBookingModal()"><i class="fas fa-calendar-alt"></i> Réserver ce service</a>
                     <!-- Add share buttons or links here -->
+                    <h4>Share:</h4>
+						<ul class="product-share">
+							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href=""><i class="fab fa-twitter"></i></a></li>
+							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+						</ul>
                 </div>
             </div>
         </div>

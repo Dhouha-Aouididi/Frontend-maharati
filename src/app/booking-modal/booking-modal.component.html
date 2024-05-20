@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h4 class="modal-title">Book Service</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancelBooking()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <h5>{{ service.title }}</h5>
+  <p><strong>Categories: </strong>{{ service.category }}</p>
+  <p class="single-product-pricing"><span>Price</span> {{ service.price | currency }}</p>
+  <p>{{ service.description }}</p>
+  <form>
+    <div class="form-group">
+      <label for="date">Select Date:</label>
+      <input type="date" id="date" name="date" class="form-control" [(ngModel)]="selectedDate" required>
+    </div>
+    <div class="form-group">
+      <label for="time">Select Time:</label>
+      <input type="time" id="time" name="time" class="form-control" [(ngModel)]="selectedTime" required>
+      <small class="form-text text-muted">Please select a time in the format HH:MM (24-hour format).</small>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="cancelBooking()">Cancel</button>
+  <button type="button" class="btn btn-primary" (click)="confirmBooking()">Confirm Booking</button>
+</div>

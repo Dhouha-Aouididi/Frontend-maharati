@@ -44,10 +44,3 @@ export class ServicelistComponent implements OnInit {
 }
 
 
-
-
-  // onPageChange(event: number): void {
-  //   this.currentPage = event;
-  //   // this.loadServices(); // Load services for the new page
-  // }
-
