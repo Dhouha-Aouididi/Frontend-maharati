@@ -24,7 +24,9 @@
             <div class="col-md-7">
                 <div class="single-product-content">
                     <h3>{{ service.title }}</h3>
-                    <p><strong>Categories: </strong>{{ service.category }}</p>
+                    <p><strong>Categorie: </strong>{{ service.category }}</p>
+                    <p><strong>Disponibilité: </strong>{{ service.availability }}</p>
+
                     <p class="single-product-pricing"><span>Prix</span>{{ service.price | number:'1.0-0' }}dt</p>
                     <p>{{ service.description }}</p>
                     <!-- Star Rating Icon -->

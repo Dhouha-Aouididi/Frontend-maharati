@@ -44,16 +44,15 @@
 <!-- Formulaire pour laisser un commentaire -->
 <div class="comment-template">
   <h4>Laisser un commentaire</h4>
-  <p>Vous avaez des remarques, n'hésitez pas de vous exprimer</p>
+  <p>Vous avez des remarques, n'hésitez pas de vous exprimer!!!</p>
   <form (ngSubmit)="onCreateComment()">
-    <div class="comment-rating">
-      <i *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+    <div class="comment-rating"><h5>Votre avis:</h5><i *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
         class="fa fa-star"
         [ngClass]="{ 'fa-star-checked': newComment.rating >= i + 1 }"
         (click)="onRateClick(i + 1)"></i>
     </div>
     <p>
-      <textarea name="comment" id="comment" cols="20" rows="30" [(ngModel)]="newComment.commentText" placeholder="Your Comment here" required></textarea>
+      <textarea name="comment" id="comment" cols="20" rows="30" [(ngModel)]="newComment.commentText" placeholder="Votre commentaire ici" required></textarea>
     </p>
     <p>
       <input type="submit" value="Add a Comment">

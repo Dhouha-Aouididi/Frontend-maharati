@@ -27,6 +27,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { BookingModalComponent } from './booking-modal/booking-modal.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingModalUpdateComponent } from './booking-modal-update/booking-modal-update.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -52,6 +53,7 @@ import { BookingModalUpdateComponent } from './booking-modal-update/booking-moda
     BookingModalComponent,
     BookingsComponent,
     BookingModalUpdateComponent,
+    ProfileComponent,
     
   ],
   imports: [

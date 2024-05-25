@@ -10,6 +10,7 @@ import { ServiceDetailComponent } from './service-detail/service-detail.componen
 import { ProviderlistComponent } from './providerlist/providerlist.component';
 import { ProviderDetailComponent } from './provider-detail/provider-detail.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'services/:id', component: ServiceDetailComponent },
   {path: 'providerlist', component: ProviderlistComponent},
   {path: 'providers/:id', component: ProviderDetailComponent},
-  {path: 'bookings', component: BookingsComponent}
+  {path: 'bookings', component: BookingsComponent},
+  {path: 'profile', component: ProfileComponent}
+
 ];
 
 @NgModule({

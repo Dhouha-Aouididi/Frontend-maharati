@@ -5,7 +5,7 @@
   
     <div class="col-lg-8 offset-lg-2 text-center">
       <div class="section-title with-search">
-        <h3><span class="orange-text">Our</span> Services</h3>
+        <h3><span class="orange-text">Nos meilleurs</span> Services à Domicile</h3>
 
         <form class="search-form" (ngSubmit)="onSubmitSearch()">
           <div class="search-bar">
@@ -25,8 +25,8 @@
             <a [routerLink]="['/services', service.id]"><img [src]="service.image" alt=""></a>
           </div>
           <h3>{{ service.title }}</h3>
-          <p class="product-price"><span>Price</span> {{ service.price | number:'1.0-0' }}dt</p>
-          <a [routerLink]="['/services', service.id]" class="cart-btn"><i class="fas fa-calendar-alt"></i> Book</a>
+          <p class="product-price"><span>Prix</span> {{ service.price | number:'1.0-0' }}dt</p>
+          <a [routerLink]="['/services', service.id]" class="cart-btn"><i class="fas fa-calendar-alt"></i> Réserver</a>
         </div>
       </div>
     </div>
