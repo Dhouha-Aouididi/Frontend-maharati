@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CommentsComponent implements OnInit {
   comments: Comment[] = [];
+  p: number = 1;
+  itemsPerPage: number = 3;
   newComment: Comment = {
     user_id: 0, // Replace with 0 (or handle cases where user ID might be unavailable)
     service_id: 0,
@@ -59,16 +61,23 @@ export class CommentsComponent implements OnInit {
     this.newComment.rating = rating;
   }
 
-  onDeleteComment(commentId: number) {
-    const commentToDelete = this.comments.find(comment => comment.id === commentId);
-
-    if (commentToDelete && commentToDelete.user_id === this.currentUserId) {
-      this.commentsService.deleteComment(commentId)
-        .subscribe(() => {
-          this.comments = this.comments.filter(comment => comment.id !== commentId);
-        }, error => this.errorMessage = error.message);
-    } else {
-      this.errorMessage = "You are not authorized to delete this comment.";
+  onDeleteComment(commentId: number): void {
+    this.commentsService.deleteComment(commentId).subscribe(
+      () => {
+        this.comments = this.comments.filter(comment => comment.id !== commentId);
+      },
+      (error) => {
+        this.errorMessage = 'Error deleting comment: ' + (error.message || error.statusText);
+      }
+    );
+  }
+  onPageChange(event: number): void {
+    if (event >= 1 && event <= this.getTotalPages()) {
+      this.p = event;
     }
+  }
+
+  getTotalPages(): number {
+    return Math.ceil(this.comments.length / this.itemsPerPage);
   }
 }

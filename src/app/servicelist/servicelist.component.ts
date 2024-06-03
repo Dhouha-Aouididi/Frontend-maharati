@@ -1,5 +1,3 @@
-// servicelist.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../services/service-service/service.service';
 import { Service } from '../models/service';

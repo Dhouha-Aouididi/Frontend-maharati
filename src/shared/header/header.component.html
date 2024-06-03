@@ -40,26 +40,27 @@
                            
                             <li *ngIf="isLoggedIn"><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
                             <li>
-                                <div class="header-icons">
-                                    <a class="mobile-hide search-bar-icon"><i class="fas fa-search"></i></a>
+                                <!-- <div class="header-icons"> -->
+                                    <!-- <a class="mobile-hide search-bar-icon"><i class="fas fa-search"></i></a> -->
                                     <li *ngIf="isLoggedIn">
                                     <a class="shopping-cart" routerLink="/bookings" routerLinkActive="active">Réservations  <i class="fas fa-calendar-alt"></i></a>
                                     </li>
                                     <li *ngIf="!isLoggedIn">
                                     <a class="signin-icon white-icon" routerLink="/login" routerLinkActive="active"><i class="fas fa-user"></i></a>
                                 </li>
-                                <li *ngIf="isLoggedIn">
-                                    <a routerLink="/profile" routerLinkActive="active">{{username}}</a></li>
-                                    <li *ngIf="isLoggedIn">
-                                    <a href class="nav-item nav-link active" (click)="logout()">LogOut</a>
-                        
-                                    </li>
-                                </div>
-                            </li>
+                                <li *ngIf="isLoggedIn"><a href="#">{{username}}</a>
+                                  <ul class="sub-menu">
+                                    <li><a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link active">Profile</a></li>
+                                      <li><a  href="#" class="nav-item nav-link active" (click)="logout()">LogOut</a></li>
+                                    </ul>
+                                  </li>
+                                <!-- </div> -->
+                            <!-- </li> -->
                         </ul>
-                    </nav>
-                    <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                    <div class="mobile-menu"></div>
+                    <!-- <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a> -->
+                    <!-- <div class="mobile-menu"></div> -->
+                  </nav>
+
                     <!-- menu end -->
                 </div>
             </div>

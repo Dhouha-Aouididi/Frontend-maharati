@@ -25,7 +25,7 @@
             <a [routerLink]="['/services', service.id]"><img [src]="service.image" alt=""></a>
           </div>
           <h3>{{ service.title }}</h3>
-          <p class="product-price"><span>Prix</span> {{ service.price | number:'1.0-0' }}dt</p>
+          <p class="product-price"><span>Prix</span>{{ service.price | number:'1.0-0' }}dt</p>
           <a [routerLink]="['/services', service.id]" class="cart-btn"><i class="fas fa-calendar-alt"></i> Réserver</a>
         </div>
       </div>

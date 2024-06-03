@@ -16,7 +16,7 @@
     </h3>
 
     <div class="comment-list">
-      <div *ngFor="let comment of comments" class="single-comment-body">
+      <div *ngFor="let comment of comments | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" class="single-comment-body">
         <div class="comment-user-avater">
           <img src="assets/img/avaters/avatar0.png" alt="">
         </div>
@@ -24,18 +24,27 @@
           <h4>
             {{ comment.User.username }}
             <!-- Condition pour afficher le bouton Delete uniquement pour le commentaire de l'utilisateur connecté -->
-
             <span class="comment-rating">
               <i *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
                 class="fa fa-star"
                 [ngClass]="{ 'fa-star-checked': comment.rating >= i + 1 }"></i>
             </span>
             <a *ngIf="comment.user_id === currentUserId" (click)="onDeleteComment(comment.id)">supprimer</a>
-
           </h4>
           <p>{{ comment.commentText }}</p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <div>
+      <pagination-controls 
+        (pageChange)="onPageChange($event)"
+        [previousLabel]="'Previous'" 
+        [nextLabel]="'Next'">
+      </pagination-controls>
     </div>
   </div>
 </div>

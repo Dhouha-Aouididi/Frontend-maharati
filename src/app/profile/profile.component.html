@@ -1,1 +1,53 @@
-<p>profile works!</p>
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p>Profile</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- check out section -->
+<div class="checkout-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="checkout-accordion-wrap">
+          <div class="accordion" id="accordionExample">
+            <div class="card single-accordion">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Profile
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <div class="billing-address-form">
+                    <form (ngSubmit)="onSubmit()">
+                      <p><input type="text" [(ngModel)]="user.username" name="username" placeholder="Name" required></p>
+                      <p><input type="email" [(ngModel)]="user.email" name="email" placeholder="Email" required></p>
+                      <p><input type="text" [(ngModel)]="user.address" name="address" placeholder="Address"></p>
+                      <p><input type="tel" [(ngModel)]="user.phone" name="phone" placeholder="Phone"></p>
+                      <!-- <p><input type="text" [(ngModel)]="user.profile_image" name="profile_image" placeholder="Profile Image URL"></p> -->
+                      <p><button type="submit" class="btn btn-primary">Modifier Profile</button>
+                        <button type="button" class ="btn btn-danger" (click)="deleteUser()">Supprimer</button>
+                      </p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+<!-- end check out section -->

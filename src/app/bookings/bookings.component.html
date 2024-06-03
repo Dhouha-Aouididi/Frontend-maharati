@@ -33,7 +33,7 @@
                   <a *ngIf="booking.id" (click)="deleteBooking(booking.id)"><i class="far fa-window-close"></i></a><br>
                   <a (click)="openUpdateBookingModal(booking)"><i class="fas fa-edit"></i></a>
                 </td>
-                <td class="product-image"><img [src]="booking.Service.image" alt="Service Image" class="booking-image"></td>
+                <td class="product-image"><img [src]="booking.Service.image" alt="Service Image"></td>
                 <td class="product-name">{{ booking.Service.title }}</td>
                 <td class="product-price">{{ booking.Service.price| number:'1.0-0' }} dt</td>
                 <td class="product-quantity">{{ formatDateTime(booking.date, 'dd/MM/y') }} {{ booking.time }}</td>
