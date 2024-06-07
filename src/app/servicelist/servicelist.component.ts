@@ -12,7 +12,7 @@ export class ServicelistComponent implements OnInit {
   filteredServices: Service[] = [];
   searchQuery: string = '';
   p: number = 1;
-  itemsPerPage: number = 3;
+  itemsPerPage: number = 6;
 
   constructor(private serviceService: ServiceService) {}
 

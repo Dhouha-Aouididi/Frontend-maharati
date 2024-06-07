@@ -35,7 +35,7 @@
                 </td>
                 <td class="product-image"><img [src]="booking.Service.image" alt="Service Image"></td>
                 <td class="product-name">{{ booking.Service.title }}</td>
-                <td class="product-price">{{ booking.Service.price| number:'1.0-0' }} dt</td>
+                <td class="product-price">{{ booking.Service.price| number:'1.0-0' }} dt par jour</td>
                 <td class="product-quantity">{{ formatDateTime(booking.date, 'dd/MM/y') }} {{ booking.time }}</td>
               </tr>
             </tbody>
@@ -84,6 +84,7 @@
     </div>
   </div>
 </div>
-<div *ngIf="bookings.length === 0" class="no-bookings mt-150 mb-150">
-  <p>No bookings found.</p>
+<div *ngIf="bookings.length === 0" class="no-bookings">
+  <h3>Pas de réservations</h3>
 </div>
+
