@@ -7,7 +7,7 @@ import { Booking } from 'src/app/models/booking';
   providedIn: 'root'
 })
 export class BookingService {
-  private apiUrl = 'http://localhost:3000/bookings'; // Remplacez par votre URL d'API
+  private apiUrl = 'APIUrl/bookings';
 
   constructor(private http: HttpClient) {}
 

@@ -28,7 +28,8 @@ import { BookingModalComponent } from './booking-modal/booking-modal.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingModalUpdateComponent } from './booking-modal-update/booking-modal-update.component';
 import { ProfileComponent } from './profile/profile.component';
-import { httpInterceptorProviders } from './services/_helpers/http.interceptor'
+import { httpInterceptorProviders } from './services/_helpers/http.interceptor';
+import { CompteurComponent } from './compteur/compteur.component'
 
 
 
@@ -55,6 +56,7 @@ import { httpInterceptorProviders } from './services/_helpers/http.interceptor'
     BookingsComponent,
     BookingModalUpdateComponent,
     ProfileComponent,
+    CompteurComponent,
     
   ],
   imports: [

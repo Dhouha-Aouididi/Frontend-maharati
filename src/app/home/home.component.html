@@ -107,57 +107,7 @@
 <app-servicelist></app-servicelist>
 <!-- end service section -->
 
-<!-- cart banner section -->
-<section class="cart-banner pt-100 pb-100">
-    <div class="container">
-        <div class="row clearfix">
-            <!--Image Column-->
-            <div class="image-column col-lg-6">
-                <div class="image">
-                    <div class="price-box">
-                        <div class="inner-price">
-                            <span class="price">
-                                <strong>30%</strong> <br> off par jour
-                            </span>
-                        </div>
-                    </div>
-                    <img src="assets/img/services/patient aid.jpg">
-                </div>
-            </div>
-            <!--Content Column-->
-            <div class="content-column col-lg-6">
-                <h3><span class="orange-text">Promotion</span>du Juin</h3>
-                <h4>Infirmerie à domicile</h4>
-                <div class="text">L'infirmier à domicile est un professionnel de la santé qui fournit des soins médicaux à des patients dans le confort de leur propre maison. Ce service permet aux patients de recevoir des soins personnalisés et adaptés à leurs besoins sans avoir à se déplacer dans un établissement de santé. </div>
-                <!--Countdown Timer-->
-                <div class="time-counter">
-                    <div class="time-countdown clearfix">
-                        <div class="counter-column">
-                            <div class="inner"><span class="count" id="days">00</span>Days</div>
-                        </div>
-                        <div class="counter-column">
-                            <div class="inner"><span class="count" id="hours">00</span>Hours</div>
-                        </div>
-                        <div class="counter-column">
-                            <div class="inner"><span class="count" id="minutes">00</span>Mins</div>
-                        </div>
-                        <div class="counter-column">
-                            <div class="inner"><span class="count" id="seconds">00</span>Secs</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <a [routerLink]="'/services/24'" class="cart-btn mt-3">
-                    <i class=""></i> Voir les détails
-                </a>
-                
-                
-                
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end cart banner section -->
+<app-compteur></app-compteur>
 
 <!-- advertisement section -->
 <div class="abt-section mb-150">

@@ -36,12 +36,13 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
 import { Comment } from 'src/app/models/comment';
 import { TokenStorageService } from '../token-service/token-storage.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommentsService {
-  private baseUrl = 'http://localhost:3000/comments';
+  private baseUrl = `${environment.APIUrl}/comments`;
   private httpTimeout = 5000; // 5 seconds timeout
 
   constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) {}

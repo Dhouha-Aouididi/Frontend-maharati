@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   filteredServices$: Observable<Service[]>;
+  title: any;
 
   constructor(private filteredDataService: FilteredDataService) {
     this.filteredServices$ = this.filteredDataService.getAllServices();
